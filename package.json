@@ -1,0 +1,18 @@
+{
+  "name": "rules-engine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Mallett",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^12.12.0",
+    "ava": "^2.4.0",
+    "nyc": "^14.1.1",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4"
+  }
+}
