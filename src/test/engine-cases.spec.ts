@@ -1,5 +1,5 @@
 import * as test from "ava";
-import { Condition, Person, Product, Rule, RulesEngine } from "./";
+import { Condition, Person, Product, Rule, RulesEngine } from "../";
 
 test.serial("eq (person.name) (positive)", async t => {
   const f: Person = new Person("Frank", 720, "NJ");
