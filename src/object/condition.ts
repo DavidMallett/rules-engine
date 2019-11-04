@@ -1,10 +1,12 @@
 export class Condition {
-  public operator: any;
-  public operand: any;
+  public operator: string;
+  public operand: string;
   public comparator: string;
-  public trigger: boolean;
+  public trigger?: boolean = false;
+  public description?: string;
 
-  public constructor(operator: any, comparator: string, operand: any) {
+  public constructor(operator: any, comparator: string, operand: any, description?: string) {
+    this.trigger = false;
     this.operator = operator;
     this.operand = operand;
     this.comparator = comparator;
@@ -37,5 +39,23 @@ export class Condition {
       default:
         throw new Error("invalid comparator");
     }
+    this.description = description || "n/a";
   }
+
+  // for when instances of this class are cast from object literals
+  public evaluate(): boolean {
+    if (this.trigger) {
+      return true;
+    } else {
+      const test: Condition = new Condition(this.operator, this.comparator, this.operand, this.description || "");
+      if ((test) && test.trigger) {
+        this.trigger = true;
+        return true;
+      } else {
+        this.trigger = false;
+        return false;
+      }
+    }
+  }
+
 }

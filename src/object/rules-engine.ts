@@ -1,9 +1,6 @@
 import { Person } from "./person";
 import { Product } from "./product";
-
-export interface Rule {
-
-}
+import { Rule } from "./rule";
 
 export class RulesEngine {
 
@@ -18,6 +15,25 @@ export class RulesEngine {
    */
   public static async runRules(person: Person, prod: Product, rules: Rule[]): Promise<void> {
     
+  }
+
+  public rules: Rule[];
+
+  public constructor(rules: Rule[]) {
+    this.rules = rules;
+  }
+
+  public async runRules(person: Person, product: Product): Promise<string> {
+    let output: string = "";
+    for (const rule of this.rules) {
+      if (rule.condition.trigger) {
+        
+      }
+    }
+
+
+
+    return Promise.resolve(output);
   }
 
 }

@@ -28,3 +28,22 @@ You can confirm that you have the prerequisites installed properly by running `n
 1. Clone this repository by running `git clone https://github.com/DavidMallett/rules-engine.git`, or navigating to the repository in Github and clicking the "Set up in Desktop" version (separate application GitHub Desktop required)
 
 2. In a new Terminal/Shell, navigate to where you cloned the repo (most likely the command `cd ~/rules-engine` will accomplish this) and run `npm install`.
+
+
+For convenience, a set of basic actions, conditions, and rules are included. These are for example only.
+
+ACTION_LIST:
+[0] reduce interest rate
+[1] raise interest rate
+[2] disqualify product
+[3] set new price
+[4] change product name
+
+CONDITION_LIST:
+[0] if `person.creditScore >== 720`
+[1] if `person.creditScore < 720`
+[2] if `person.state === "FL"`
+[3] if `product.name === "7-1 ARM"`
+[4] if `Person.people.length > 10`
+[5] if `Products.allProducts.length <== 5`
+[6] static (no condition)
