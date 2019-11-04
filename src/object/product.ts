@@ -25,14 +25,10 @@ export class Product {
   public async action(action: Action, ...inputs: any[]): Promise<void> {
     if (action.numInputs !== inputs.length) {
       throw new Error(`Wrong number of inputs. Expected ${action.numInputs}, got ${inputs.length}`)
-    }
-    if ((action.target) && !(action.targetProperty)) {
-
-    } else if (!(action.target) && (action.targetProperty)) {
-      const propertyName: string = (action.targetProperty.split("."))[1];
-      if (this[propertyName]) {
-        
-      }
+    } else if (!action.target) {
+      throw new Error(`No target defined for action ${action.actionName}`);
+    } else if (!action.operation) {
+      throw new Error(`No operation defined for action ${action.actionName}`);
     }
     // switch(action.type) {
     //   case "interestRate":

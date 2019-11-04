@@ -1,6 +1,8 @@
 import { Action } from "./action";
 import { Condition } from "./condition";
+import { Person } from "./person";
 import { Product } from "./product";
+import { Target } from "./target";
 
 export const STARTING_INTEREST_RATE: number = 5.0;
 
@@ -9,31 +11,26 @@ export const STATES: string[] = ["Alabama", "Alaska", "American Samoa", "Arizona
 export const ACTION_LIST: Action[] = [
   {
     actionName: "reduce interest rate",
-    targetProperty: "product.interestRate",
     numInputs: 1,
-    inputType: "number"
+    inputType: "number",
   },
   {
     actionName: "raise interest rate",
-    targetProperty: "product.interestRate",
     numInputs: 1,
     inputType: "number"
   },
   {
     actionName: "disqualify product",
-    targetProperty: "product.disqualified",
     numInputs: 0,
     inputType: "boolean"
   },
   {
     actionName: "set to new price",
-    targetProperty: "product.interestRate",
     numInputs: 1,
     inputType: "number"
   },
   {
     actionName: "change product name",
-    targetProperty: "product.name",
     numInputs: 1,
     inputType: "string"
   }

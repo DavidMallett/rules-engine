@@ -1,11 +1,33 @@
+import { Person } from "./person";
+import { Product } from "./product";
 
 const VALID_TYPES: string[] = ["String", "Number", "Boolean", "string", "number", "boolean",
   "Person", "Person[]", "Product", "Product[]", "void", "Promise<void>"
 ];
 
-const primitives: string[] = ["string", "number", "boolean"];
-
 export class Target {
+
+  public static targetPersonByName(name: string): Person {
+    const result = Person.people.find((person, index, arr) => {
+      return person.name === name;
+    });
+    if (!result) {
+      throw new Error("no person found with that name");
+    } else {
+      return result;
+    }
+  }
+
+  public static targetProductByName(name: string): Product {
+    const result = Product.allProducts.find((prod, index, arr) => {
+      return prod.name === name;
+    });
+    if (!result) {
+      throw new Error("no person found with that name");
+    } else {
+      return result;
+    }
+  }
 
   public targetObj: any; // reference to the Object being modified
   public targetProperty: string; // string name of the property to be modified (_MUST_ exist on targetObj)
