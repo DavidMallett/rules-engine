@@ -2,6 +2,8 @@
 
 This solution shall dynamically generate product pricing from a set of rules defined by the finance team at Visio Lending. We know the initial rules, but they could change at any time, could be represented in any way, and it may be necessary to extend the rules engine (i.e. adding new kinds of actions or triggers) without altering the codebase.
 
+__Does this project appear incomplete?__ You may be on the "master" branch - switch to the "development" branch to see the latest changes (committing directly to master without a code review is considered a coding "worst practice")
+
 ## Acceptance Criteria
 
 1. Rules can be defined _outside the code_.
@@ -30,6 +32,8 @@ You can confirm that you have the prerequisites installed properly by running `n
 2. In a new Terminal/Shell, navigate to where you cloned the repo (most likely the command `cd ~/rules-engine` will accomplish this) and run `npm install`.
 
 
+## Defined Rules
+
 For convenience, a set of basic actions, conditions, and rules are included. These are for example only.
 
 ACTION_LIST:
@@ -47,3 +51,4 @@ CONDITION_LIST:
 [4] if `Person.people.length > 10`
 [5] if `Products.allProducts.length <== 5`
 [6] static (no condition)
+[7] 
